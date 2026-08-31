@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "7ff6d1fd85a1383ea9f71557",
+    "documentMicroversion": "8d41f620ff54a2f5b2c3d475",
+    "elementId": "67bbfc5a5891b811a45e86d2",
+    "fullConfiguration": "default",
+    "id": "MtNNamVEKqEbuFB2s",
+    "isStandardContent": false,
+    "name": "DC15_A01_IDLE_CAP_DUMMY <1>",
+    "partId": "JFP",
+    "suppressed": false,
+    "type": "Part"
+}

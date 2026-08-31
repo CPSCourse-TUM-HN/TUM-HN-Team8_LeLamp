@@ -1,0 +1,16 @@
+{
+	"documentId": "16c9706360b5ad34f9c8db49",
+	"output_format": "urdf",
+	"assembly_name": "Robot",
+	"max_stl_size": 0.5,
+	"simplify_stls": true,
+	"joint_properties": {
+		"default": {
+			"class": "sts3215"
+		}
+	},
+	"additional_xml": [
+		"sensors.xml",
+		"joints_properties.xml"
+	]
+}

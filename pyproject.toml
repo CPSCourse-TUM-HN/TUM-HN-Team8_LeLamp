@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ailamp"
+version = "0.1.0"
+description = "AILamp Jetson runtime, MuJoCo simulation, and hardware integration"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "GPL-3.0-only"
+dependencies = [
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+hardware = [
+    "opencv-python>=4.9",
+    "pyserial>=3.5",
+    "sounddevice>=0.5",
+    "ultralytics>=8.0",
+]
+nano = [
+    "numpy>=1.26",
+    "opencv-python-headless>=4.9",
+    "openai>=2.35.0",
+    "pyserial>=3.5",
+    "python-dotenv>=1.0",
+    "sounddevice>=0.5",
+    "livekit-agents[openai]>=1.2",
+    "livekit-plugins-noise-cancellation>=0.2",
+]
+simulation = [
+    "mujoco>=3.2",
+    "glfw>=2.7",
+    "pillow>=10.0",
+]
+voice = [
+    "python-dotenv>=1.0",
+    "livekit-agents[openai]>=1.2",
+    "livekit-plugins-noise-cancellation>=0.2",
+]
+test = [
+    "pytest>=8.0",
+    # tests/test_ailamp_adapters.py exercises scripts/generate_ailamp_adapters.py,
+    # which needs the CSG kernel + triangulation libs at import/run time.
+    "manifold3d>=3.0",
+    "mapbox-earcut>=1.0",
+]
+
+[project.scripts]
+ailamp = "ailamp.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "ailamp_runtime"}
+
+[tool.setuptools.packages.find]
+where = ["ailamp_runtime"]
+
+[tool.setuptools.package-data]
+ailamp = ["recordings/*.csv"]
+
+[tool.pytest.ini_options]
+pythonpath = ["ailamp_runtime"]
+testpaths = ["tests"]

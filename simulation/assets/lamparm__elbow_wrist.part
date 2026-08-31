@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "16c9706360b5ad34f9c8db49",
+    "documentMicroversion": "5f8c8c1a4328aacb431d21dc",
+    "elementId": "f9af794ca55c8dc207d012e8",
+    "fullConfiguration": "default",
+    "id": "Mi3s5Syzzhp6PwFNm",
+    "isStandardContent": false,
+    "name": "LampArm (Elbow-Wrist) <2>",
+    "partId": "JHD",
+    "suppressed": false,
+    "type": "Part"
+}

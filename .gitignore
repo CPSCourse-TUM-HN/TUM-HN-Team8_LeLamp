@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.DS_Store
+.superpowers/
+outputs/
+dist/
+build/
+*.egg-info/
+
+# course submission
+outputs/
+.venv/
+*.pyc
+__pycache__/
+.pytest_cache/

@@ -1,0 +1,50 @@
+<mujoco model="ailamp_scene">
+    <include file="ailamp_robot.xml" />
+    <option timestep="0.01"/>
+
+    <visual>
+        <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0" />
+        <rgba haze="0.15 0.25 0.35 1" />
+        <global azimuth="160" elevation="-20" />
+    </visual>
+
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072" />
+        <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300" />
+        <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2" />
+        <material name="target_red" rgba="1 0.12 0.08 1" />
+        <material name="ailamp_electronics_dark" rgba="0.05 0.07 0.08 1" />
+        <material name="ailamp_pcb_green" rgba="0.02 0.35 0.16 1" />
+        <material name="ailamp_cable_black" rgba="0.01 0.01 0.01 1" />
+        <material name="ailamp_base_shell" rgba="0.08 0.09 0.09 1" />
+        <material name="ailamp_cover_gray" rgba="0.36 0.37 0.35 1" />
+        <mesh name="ailamp_integrated_base_shell_mesh" file="ailamp_adapters/AILamp_LampBase_Electronics_Shell.stl" scale="0.001 0.001 0.001" />
+        <mesh name="ailamp_integrated_base_cover_mesh" file="ailamp_adapters/AILamp_LampBase_Electronics_Cover.stl" scale="0.001 0.001 0.001" />
+        <mesh name="ailamp_jetson_tray_mesh" file="ailamp_adapters/AILamp_Jetson_Nano_Base_Tray.stl" scale="0.001 0.001 0.001" />
+        <mesh name="ailamp_electronics_deck_mesh" file="ailamp_adapters/AILamp_Electronics_Side_Deck.stl" scale="0.001 0.001 0.001" />
+        <mesh name="ailamp_cable_clip_6mm_mesh" file="ailamp_adapters/AILamp_Cable_Clip_6mm.stl" scale="0.001 0.001 0.001" />
+        <mesh name="ailamp_cable_clip_10mm_mesh" file="ailamp_adapters/AILamp_Cable_Clip_10mm.stl" scale="0.001 0.001 0.001" />
+    </asset>
+
+    <worldbody>
+        <light pos="0 0 3.5" dir="0 0 -1" directional="true" />
+        <geom name="floor" size="0 0 0.05" pos="0 0 -0.055" type="plane" material="groundplane" />
+        <body name="ailamp_base_layout_visuals" pos="0 0 0">
+            <geom name="ailamp_integrated_base_shell_visual" type="mesh" mesh="ailamp_integrated_base_shell_mesh" pos="0 0 -0.052" material="ailamp_base_shell" contype="0" conaffinity="0" />
+            <geom name="ailamp_integrated_base_cover_visual" type="mesh" mesh="ailamp_integrated_base_cover_mesh" pos="0 0 -0.004" material="ailamp_cover_gray" contype="0" conaffinity="0" />
+            <geom name="ailamp_cable_clip_6mm_visual" type="mesh" mesh="ailamp_cable_clip_6mm_mesh" pos="-0.06 0.135 0.006" material="ailamp_cable_black" contype="0" conaffinity="0" />
+            <geom name="ailamp_cable_clip_10mm_visual" type="mesh" mesh="ailamp_cable_clip_10mm_mesh" pos="0.06 0.135 0.006" material="ailamp_cable_black" contype="0" conaffinity="0" />
+        </body>
+        <body name="virtual_person_target" pos="0.0 0.0 0.9">
+            <joint name="target_slide_x" type="slide" axis="1 0 0" range="-1.2 1.2" />
+            <joint name="target_slide_y" type="slide" axis="0 1 0" range="-3.8 -0.35" ref="-1.5" />
+            <geom name="virtual_person_body" type="capsule" fromto="0 0 -0.55 0 0 0.55" size="0.18" material="target_red" contype="0" conaffinity="0" />
+            <geom name="virtual_person_head" type="sphere" pos="0 0 0.78" size="0.16" material="target_red" contype="0" conaffinity="0" />
+        </body>
+        <camera name="ailamp_overview_camera" pos="0.800000 -0.750000 0.750000" xyaxes="0.711654 0.702530 0 -0.256579 0.259911 0.930921" fovy="50" />
+        <camera name="ailamp_sim_camera" pos="0 -4.0 1.2" xyaxes="1 0 0 0 0.119 0.993" fovy="55" />
+    </worldbody>
+    <equality>
+        <weld name="ailamp_lock_base_to_world" body1="world" body2="lamparm__base_elbow" relpose="0 0 0 1 0 0 0" />
+    </equality>
+</mujoco>
