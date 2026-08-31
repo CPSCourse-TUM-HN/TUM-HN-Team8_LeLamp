@@ -3,7 +3,7 @@
 **Course:** Embedded Systems, Cyber-Physical Systems and Robotics (INHN0018)
 **Team:** Group 8, TUM Campus Heilbronn, Summer Semester 2026
 **Date:** 09.09.2026
-**Repository:** *(fill in the CPSCourse-TUM-HN URL)*
+**Repository:** <https://github.com/CPSCourse-TUM-HN/TUM-HN-Team8_LeLamp>
 
 > Working draft. Sections marked **TODO** need numbers, photos or text from the team before the
 > report is exported to PDF (`docs/report/Group8_CPS_Report.pdf`).

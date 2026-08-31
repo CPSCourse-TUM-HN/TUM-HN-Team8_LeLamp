@@ -10,8 +10,8 @@ Presentation: **09.09.2026, from 13:00**, Etzelstr. 38 / online. Duration: **15 
 | 1 | Video demonstrating the project in action | `docs/video/` | ☐ to record |
 | 2 | Technical report — project, methodologies, findings | `docs/report/TECHNICAL_REPORT.md` (+ PDF) | ☐ draft |
 | 3 | Presentation slides, **PDF format** | `docs/slides/` | ☐ to export |
-| 4 | All code used in the project | repository root | ☑ in repo |
-| 5 | Link to the GitHub repository holding all of the above | this repo | ☐ push to `CPSCourse-TUM-HN` |
+| 4 | All code used in the project | repository root | ☑ pushed |
+| 5 | Link to the GitHub repository holding all of the above | <https://github.com/CPSCourse-TUM-HN/TUM-HN-Team8_LeLamp> | ☑ pushed 30.08.2026 |
 
 > All materials (presentation, report, code and video) must be uploaded to the team's GitHub
 > repository, and the code must additionally live in the course organisation
@@ -27,12 +27,11 @@ whether the handover may take place by 22.09.2026 — pending confirmation.*
 
 ```bash
 cd Team8_LeLamp
-git remote add origin git@github.com:CPSCourse-TUM-HN/Team8_LeLamp.git
-git push -u origin main
+git remote -v   # origin -> git@github.com:CPSCourse-TUM-HN/TUM-HN-Team8_LeLamp.git
+git push
 ```
 
-If the repository does not exist yet, create it inside the organisation first (or ask Moaaz to
-create it) and keep it **GPL-3.0**, since the project derives from LeLamp.
+Repository (public, GPL-3.0): <https://github.com/CPSCourse-TUM-HN/TUM-HN-Team8_LeLamp>
 
 ## Before the presentation
 
@@ -42,5 +41,5 @@ create it) and keep it **GPL-3.0**, since the project derives from LeLamp.
 - [ ] `scripts/verify_local.sh` passes on a clean checkout
 - [ ] `README.md` links resolve on GitHub
 - [ ] `NOTICE.md` provenance up to date
-- [ ] Repository pushed to `CPSCourse-TUM-HN` and visible to the teaching team
+- [x] Repository pushed to `CPSCourse-TUM-HN` and public
 - [ ] Handover of hardware agreed with Moaaz

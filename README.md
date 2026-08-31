@@ -20,7 +20,7 @@ detection, expressive motion playback, addressable LED feedback, a voice agent
 | 2 | **Technical report** (project, methodology, findings) | [`docs/report/`](docs/report/) |
 | 3 | **Presentation slides (PDF)** | [`docs/slides/`](docs/slides/) |
 | 4 | **All code** | repository root: `ailamp_runtime/`, `firmware/`, `simulation/`, `scripts/`, `config/`, `tests/` |
-| 5 | **Repository link** (this repo) | pushed to the course organisation `CPSCourse-TUM-HN` |
+| 5 | **Repository link** (this repo) | <https://github.com/CPSCourse-TUM-HN/TUM-HN-Team8_LeLamp> |
 
 Submission status and the full checklist: [`SUBMISSION.md`](SUBMISSION.md). Team and roles: [`TEAM.md`](TEAM.md).
 
@@ -51,8 +51,8 @@ Our contribution (see [`NOTICE.md`](NOTICE.md) for the exact file-level provenan
 ## 3. Quick start
 
 ```bash
-git clone <this repository>
-cd Team8_LeLamp
+git clone https://github.com/CPSCourse-TUM-HN/TUM-HN-Team8_LeLamp.git
+cd TUM-HN-Team8_LeLamp
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[test]"
 ailamp runtime-check          # environment sanity check
